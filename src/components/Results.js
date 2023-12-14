@@ -20,6 +20,7 @@ const Display = ({ hands, board }) => {
         result.map((player, index) => {
           return (
             <div key={index} className="font-mono text-8xl">
+              <p className="text-5xl">Chances of winning</p>
               {player.wins / player.count}
             </div>
           );
