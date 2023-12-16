@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 
-const Inputbox = () => {
+const Inputbox = ({ setFunction }) => {
   return (
-    <div className="text-2xl">
+    <div>
       <input
-        className="m-5 w-96 h-20 text-center rounded-lg"
+        className="input input-primary m-5 w-96 h-20 text-center rounded-lg"
         placeholder="Please insert your hand"
+        onChange={(e) => {
+          setFunction(e.target.value);
+        }}
       ></input>
     </div>
   );
