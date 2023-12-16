@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-const po = require("poker-odds");
-
+import { calculateEquity } from "poker-odds";
 // const hands = [['As', 'Kh'], ['Kd', 'Qs']]
 // const board = ['Td', '7s', '8d']
 // const iterations = 100000 // optional
@@ -9,10 +8,6 @@ const po = require("poker-odds");
 
 const Display = ({ hands, board }) => {
   const [result, setResult] = useState(null);
-
-  useEffect(() => {
-    setResult(po.calculateEquity(hands, board, 100000, false));
-  }, [hands, board]);
 
   return (
     <div className="flex gap-[100px]">
@@ -25,6 +20,14 @@ const Display = ({ hands, board }) => {
             </div>
           );
         })}
+      <button
+        className="btn btn-primary m-5"
+        onClick={() => {
+          setResult(calculateEquity(hands, board, 100000, false));
+        }}
+      >
+        Calculate
+      </button>
     </div>
   );
 };
