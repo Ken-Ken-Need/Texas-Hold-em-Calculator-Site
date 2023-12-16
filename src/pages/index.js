@@ -20,7 +20,7 @@ export default function Home() {
       <div className="flex flex-wrap items-center">
         {array.map((content, id) => {
           return (
-            <div className="flex flex-row items-center">
+            <div key={id} className="flex flex-row items-center">
               {id % 2 === 0 && <p>Player {id / 2 + 1}</p>}
               <Inputbox
                 setFunction={(str) => {
