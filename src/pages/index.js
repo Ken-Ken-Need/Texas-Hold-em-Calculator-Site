@@ -4,8 +4,7 @@ import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import { useState } from "react";
 
 export default function Home() {
-  const [hand, setHand] = useState([]);
-  const [array, setArray] = useState(["", ""]);
+  const [array, setArray] = useState(["", "", "", ""]);
 
   const displayArray = [];
 
@@ -16,7 +15,9 @@ export default function Home() {
     }
   }
   return (
-    <div>
+    // Inputbox display
+    // and the button for adding players
+    <div data-theme="dark">
       <div className="flex flex-wrap items-center">
         {array.map((content, id) => {
           return (
@@ -31,7 +32,6 @@ export default function Home() {
             </div>
           );
         })}
-
         <button
           className="btn btn-square"
           onClick={() => {
@@ -41,11 +41,7 @@ export default function Home() {
           +
         </button>
       </div>
-
-      {JSON.stringify(array)}
-
       <Display hands={displayArray} board={[]} />
-      {JSON.stringify(displayArray)}
     </div>
   );
 }
