@@ -1,7 +1,7 @@
 import Display from "@/components/Results";
 import Inputbox from "@/components/inputbox";
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import { useState } from "react";
+import Reload from "@/components/reload";
 
 export default function Home() {
   const [array, setArray] = useState(["", "", "", ""]);
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     // Inputbox display
     // and the button for adding players
-    <div data-theme="dark">
+    <div data-theme="dark" className="flex, felx-col, space-y-5">
       <div className="flex flex-wrap items-center">
         {array.map((content, id) => {
           return (
@@ -41,7 +41,12 @@ export default function Home() {
           +
         </button>
       </div>
-      <Display hands={displayArray} board={[]} />
+
+      {/*Calculate and reload button */}
+      <div className="flex flex-col space-y-5 items-center">
+        <Display hands={displayArray} board={[]} />
+        <Reload />
+      </div>
     </div>
   );
 }

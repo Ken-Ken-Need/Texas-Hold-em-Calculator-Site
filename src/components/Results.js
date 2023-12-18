@@ -8,28 +8,35 @@ import { calculateEquity } from "poker-odds";
 
 const Display = ({ hands, board }) => {
   const [result, setResult] = useState(null);
-
-  return (
-    <div className="flex gap-[100px]">
-      {result &&
-        result.map((player, index) => {
-          return (
-            <div key={index} className="font-mono text-8xl">
-              <p className="text-5xl">Chances of winning</p>
-              {player.wins / player.count}
-            </div>
-          );
-        })}
-      <button
-        className="btn btn-primary m-5"
-        onClick={() => {
-          setResult(calculateEquity(hands, board, 100000, false));
-        }}
-      >
-        Calculate
-      </button>
-    </div>
-  );
+  try {
+    return (
+      <div className="flex flex-col">
+        {result &&
+          result.map((player, index) => {
+            return (
+              <div key={index} className="font-mono text-xl flex space-y-5">
+                <p>Chances of winning for player {index + 1}: </p>
+                {player.wins / player.count}
+              </div>
+            );
+          })}
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            setResult(calculateEquity(hands, board, 100000, false));
+          }}
+        >
+          Calculate
+        </button>
+      </div>
+    );
+  } catch (error) {
+    return (
+      <div>
+        <p>Invalid Input!!!</p>
+      </div>
+    );
+  }
 };
 
 export default Display;

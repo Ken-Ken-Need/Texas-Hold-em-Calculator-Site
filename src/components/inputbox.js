@@ -5,7 +5,7 @@ const Inputbox = ({ setFunction }) => {
     <div>
       <input
         className="input input-primary m-5 w-96 h-20 text-center rounded-lg"
-        placeholder="Please insert your hand"
+        placeholder="Please insert hand"
         onChange={(e) => {
           setFunction(e.target.value);
         }}
