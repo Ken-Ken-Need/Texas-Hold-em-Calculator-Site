@@ -25,6 +25,7 @@ export default function Home() {
     // Inputbox display
     // and the button for adding players
     <div data-theme="dark" className="flex, flex-col, space-y-5">
+      <div className="w-screen h-80 bg-[url('/PokerHeader.jpg')] bg-cover bg-center "></div>
       <p className="flex flex-col items-center text-2xl font-black mt-10 ">
         HAND
       </p>
@@ -91,7 +92,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div class="absolute inset-x-0 bottom-0 bg-neutral h-40 ">
+      <div class="bg-neutral h-40 ">
         <Footer></Footer>
       </div>
     </div>
