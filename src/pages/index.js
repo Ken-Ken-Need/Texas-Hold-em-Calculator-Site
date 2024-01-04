@@ -4,6 +4,7 @@ import { useState } from "react";
 import Reload from "@/components/reload";
 import InputBoard from "@/components/inputBoard";
 import Footer from "@/components/footer";
+import pokerHeader from "../../public/PokerHeader.jpg";
 
 export default function Home() {
   const [arrayHand, setHand] = useState(["", "", "", ""]);
@@ -24,7 +25,10 @@ export default function Home() {
   return (
     // Inputbox display
     // and the button for adding players
-    <div data-theme="dark" className="flex, felx-col, space-y-5">
+    <div data-theme="dark" className="flex, flex-col, space-y-5">
+      <div style={{ backgroundImage: `url('${pokerHeader}')` }}>
+        Hello world
+      </div>
       <p className="flex flex-col items-center text-2xl font-black mt-10 ">
         HAND
       </p>
